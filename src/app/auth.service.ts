@@ -14,7 +14,7 @@ export class AuthService {
     {
       id: 2,
       name: 'User User',
-      login: ['user@gmail.com', 'User User']
+      login: ['user@gmail.com', 'user user']
     }
   ];
 
