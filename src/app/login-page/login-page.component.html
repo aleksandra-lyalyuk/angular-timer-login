@@ -8,7 +8,7 @@
       <form class="form" (submit)="login()">
         <label for="login">Имя/Логин</label>
         <input type="text" id="login" formControlName="login" (ngModelChange)="resetUserName()" placeholder="Введите имя/логин...">
-        <input type="submit" id="submit" [disabled]="!form.valid || disabled" [value]="disabled ? minutes : 'Отправить'">
+        <input type="submit" id="submit" [disabled]="!form.valid || disabled" [value]="sendButtonValue | async">
       </form>
     </div>
   </div>
