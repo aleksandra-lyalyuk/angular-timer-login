@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserInterface } from "../assets/interfaces/user-interface";
+import { delay, of } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,9 @@ export class AuthService {
   constructor() { }
 
   login(login: string) {
-      return this.users.find((user) => (user.login.includes(login.toLowerCase())));
-  }
+    return of(this.users.find((user) => (user.login.includes(login.toLowerCase())))).pipe(
+      delay(1000)
+    );
+   }
+
 }
